@@ -19,7 +19,8 @@
                     <th>Student Number</th> 
                     <th>Name</th> 
                     <th>Email</th> 
-                    <th>Course</th> 
+                    <th>Course</th>
+                    <th>Year Level</th>
                     <th>Actions</th> 
                 </tr> 
             </thead> 
@@ -30,7 +31,8 @@
                         <td>{{ $student->student_number }}</td> 
                         <td>{{ $student->first_name }} {{ $student->last_name }}</td> 
                         <td>{{ $student->email }}</td> 
-                        <td>{{ $student->course }}</td> 
+                        <td>{{ $student->course }}</td>
+                        <td>ssss{{ $student->year_level }}</td>
  
                         <td> 
                             <a href="{{ route('students.show', $student) }}" 
