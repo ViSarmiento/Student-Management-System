@@ -65,7 +65,19 @@
                        class="form-control" 
                        value="{{ old('course', $student->course) }}" 
                        required> 
-            </div> 
+            </div>
+            
+            <div class="mb-3">
+                <label class="form-label">Year Level</label>
+                <select name="year_level" class="form-select" required>
+                    <option value="">Select year</option>
+                        @for($i = 1; $i <= 4; $i++)
+                            <option value="{{ $i }}" {{ old('year_level') == $i ? 'selected' : '' }}>
+                                Year {{ $i }}
+                            </option>
+                        @endfor
+                </select>
+            </div>
  
             <button type="submit" class="btn btn-success"> 
                 Update Student 

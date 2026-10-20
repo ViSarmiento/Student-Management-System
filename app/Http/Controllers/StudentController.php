@@ -38,6 +38,7 @@ class StudentController extends Controller
             'last_name' => 'required|string|max:255',
             'email' => 'required|email|max:255|unique:students,email',
             'course' => 'required|string|max:255',
+            'year_level' => 'required|integer|between:1,4',
         ]);
 
         Student::create($validated);
@@ -82,6 +83,7 @@ class StudentController extends Controller
                 Rule::unique('students', 'email')->ignore($student->id),
             ],
             'course' => 'required|string|max:255',
+            'year_level' => 'required|integer|between:1,4',
         ]);
 
         $student->update($validated);
@@ -96,6 +98,6 @@ class StudentController extends Controller
     {
         $student->delete();
 
-        return redirect()->route(students.index)->with('success', 'Student deleted successfully!');
+        return redirect()->route('students.index')->with('success', 'Student deleted successfully!');
     }
 }
